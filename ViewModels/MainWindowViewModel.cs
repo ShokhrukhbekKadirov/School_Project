@@ -1,7 +1,13 @@
-﻿namespace School_Project.ViewModels
+﻿using ReactiveUI.Fody.Helpers;
+
+namespace School_Project.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        [Reactive] public LoginViewModel LoginViewModel { get; set; }
+        public MainWindowViewModel()
+        {
+            LoginViewModel = new LoginViewModel();
+        }
     }
 }
