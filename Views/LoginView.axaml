@@ -7,17 +7,18 @@
              x:Class="School_Project.Views.LoginView"
 			 x:DataType ="vm:LoginViewModel">
 	<DockPanel>
-        <Grid RowDefinitions="25,40,20,40,100" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid RowDefinitions="25,40,20,40,100,30" VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <Label Grid.Row ="0" Height="18" FontSize="10" Margin="0 0 0 -10 " VerticalAlignment="Bottom" Name="LabelLogin" Content="Login is here" Target="LoginField"/>
             
 			<TextBox Grid.Row="1" Width="200" Height="20" VerticalAlignment="Bottom" Name ="LoginField" Watermark="Login" Text="{Binding Login}"/>
             <Label Grid.Row ="2" Height="18" FontSize="10" Margin="0 0 0 -5 " VerticalAlignment="Bottom" Name="LabelPassword" Content="Password is here" Target="PasswordField"/>
             <TextBox Grid.Row="3" Width="200" Height="20" Name ="PasswordField" Watermark="Password" Text="{Binding Password}"/>
-            <Button Grid.Row ="4" HorizontalAlignment="Left"  Name ="loginButton" Content ="Login" Command="{Binding TryLoginAsync}"/>
+            <Button Grid.Row ="4" HorizontalAlignment="Left"  Name ="loginButton" Content ="Login" Command="{Binding LoginCommand}"/>
             <Button Grid.Row ="4" HorizontalAlignment="Right" Name ="Forgot_Password" Content ="Forgot password?"/>
-            
+          <TextBlock Grid.Row="5" Background="Aqua" Text="{Binding Message}"/>
 		</Grid>
+       
         
 
 		
@@ -25,6 +26,7 @@
 		
 		
 	</DockPanel>
+
 	
 </UserControl> 
 
